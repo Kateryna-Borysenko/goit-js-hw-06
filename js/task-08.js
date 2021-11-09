@@ -16,4 +16,5 @@ form.addEventListener('submit', (event) => {
         return alert('Bсе поля должны быть заполнены!');
     }
     console.log(data);
+    form.reset();
 });

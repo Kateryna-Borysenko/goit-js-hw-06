@@ -1,4 +1,3 @@
-console.log('---Task-01---');
 const categories = document.querySelector('#categories');
 const categoryItems = categories.querySelectorAll('.item');
 console.log('Number of categories:', categoryItems.length);
