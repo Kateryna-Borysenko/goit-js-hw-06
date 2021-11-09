@@ -12,25 +12,42 @@ const refs = {
 // console.log(refs.output, refs.destroyBtn, refs.createBtn, refs.input);
 
 
+// refs.createBtn.addEventListener('click', () => {
+//   const quantityBoxes = refs.input.value; //введенное число
+
+//   const arrayBoxes = [];
+//   for (let i = 0; i < quantityBoxes; i += 1) {
+//     const box = document.createElement('div');
+//     const width = '30px';
+//     const height = '30px';
+//     box.style.width = width;
+//     box.style.height = height;
+//     box.className = 'item';
+
+//     box.style.backgroundColor = getRandomHexColor();
+//     arrayBoxes.push(box);
+//   }
+//   refs.output.append(...arrayBoxes);
+  
+// });
+
 refs.createBtn.addEventListener('click', () => {
   const quantityBoxes = refs.input.value; //введенное число
-  console.log("~ quantityBoxes", quantityBoxes)
 
+  let size = 20;
   const arrayBoxes = [];
   for (let i = 0; i < quantityBoxes; i += 1) {
     const box = document.createElement('div');
-    
-    const width = '30px';
-    const height = '30px';
-    box.style.width = width;
-    box.style.height = height;
+    size += 10;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
     box.className = 'item';
 
     box.style.backgroundColor = getRandomHexColor();
     arrayBoxes.push(box);
   }
   refs.output.append(...arrayBoxes);
-  
+
 });
 
 refs.destroyBtn.addEventListener('click', () => {
