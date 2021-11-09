@@ -24,6 +24,7 @@ refs.createBtn.addEventListener('click', () => {
     const height = '30px';
     box.style.width = width;
     box.style.height = height;
+    box.className = 'item';
 
     box.style.backgroundColor = getRandomHexColor();
     arrayBoxes.push(box);
@@ -32,3 +33,9 @@ refs.createBtn.addEventListener('click', () => {
   
 });
 
+refs.destroyBtn.addEventListener('click', () => {
+  const items = document.querySelectorAll('.item');
+  for (let item of items) {
+    item.remove();
+  }
+});
