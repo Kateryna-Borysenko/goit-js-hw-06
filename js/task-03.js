@@ -13,22 +13,11 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('.gallery');
-galleryRef.style.displey = "flex";
-galleryRef.style.justifyContent = ""
-const imgMarkup = images.map(({ url, alt }) => {
+const galleryRef = document.querySelector(".gallery");
 
-  const liRef = document.createElement('li');
-  const imgRef = document.createElement('img');
-  
-  imgRef.src =url ;
-  imgRef.alt = alt;
-  imgRef.width = 200;
-  // console.log(imgRef);
-  
-  liRef.append(imgRef)
-  return liRef;
-})
-
-galleryRef.append(...imgMarkup)
-
+const imgMarkup = images
+  .map(({ url, alt }) => {
+    return `<li><img class='item' src='${url}' alt='${alt}' width='250'/></li>`;
+  })
+  .join("");
+galleryRef.insertAdjacentHTML("beforeend", imgMarkup);
